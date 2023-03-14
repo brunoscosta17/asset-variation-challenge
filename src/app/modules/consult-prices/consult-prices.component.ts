@@ -12,7 +12,7 @@ export class ConsultPricesComponent {
 
   queryField = new FormControl();
 
-  constructor(private consultPricesService: ConsultPricesService) {}
+  constructor(private consultPricesService: ConsultPricesService) {this.queryField.setValue('PETR4.SA');}
 
   search(): void {
     console.log(this.queryField.value);
