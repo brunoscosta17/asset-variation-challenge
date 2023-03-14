@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-consult-prices',
   templateUrl: './consult-prices.component.html',
   styleUrls: ['./consult-prices.component.scss']
 })
-export class ConsultPricesComponent implements OnInit {
+export class ConsultPricesComponent {
 
-  constructor() { }
+  queryField = new FormControl();
 
-  ngOnInit(): void {
+  search(): void {
+    console.log(this.queryField.value);
   }
 
 }

@@ -1,1 +1,9 @@
-
+<div class="search-wrapper">
+  <mat-form-field appearance="outline">
+    <mat-label>Pesquisa de preços</mat-label>
+    <input matInput [formControl]="queryField">
+  </mat-form-field>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" class="button" (click)="search()">Pesquisar preço</button>
+  </div>
+</div>

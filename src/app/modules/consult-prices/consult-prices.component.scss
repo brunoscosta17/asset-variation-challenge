@@ -1,0 +1,33 @@
+.search-wrapper {
+  width: 100%;
+  background: var(--color-white);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  .search-form {
+    justify-content: space-between;
+    .search-customer {
+      width: 49%;
+
+      span {
+        font-weight: 600;
+        font-size: 0.875rem;
+        width: 100%;
+      }
+
+      form {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.example-button-row {
+  display: inline;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button {
+  margin: 10px 0 0 10px;
+}
