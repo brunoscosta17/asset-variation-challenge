@@ -4,6 +4,6 @@
     <input matInput [formControl]="queryField">
   </mat-form-field>
   <div class="example-button-row">
-    <button mat-raised-button color="primary" class="button" (click)="search()">Pesquisar preço</button>
+    <button mat-raised-button color="primary" class="button" [disabled]="!queryField.value" (click)="search()">Pesquisar preço</button>
   </div>
 </div>

@@ -14,6 +14,7 @@ export class ConsultPricesComponent {
   constructor(private consultPricesService: ConsultPricesService) {}
 
   search(): void {
+    this.queryField.value
     console.log(this.queryField.value);
     this.consultPricesService
       .getPrices(this.queryField.value)
