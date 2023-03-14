@@ -3,7 +3,7 @@
     <mat-label>Pesquisa de preços</mat-label>
     <input matInput [formControl]="queryField" />
   </mat-form-field>
-  <div class="example-button-row">
+  <div class="button-row">
     <button
       mat-raised-button
       color="primary"
@@ -15,7 +15,7 @@
   </div>
 </div>
 <div class="table">
-  <div class="mat-elevation-z8" *ngIf="dataSource.data.length > 0">
+  <div class="mat-elevation-z8">
 
     <table mat-table [dataSource]="dataSource">
 
