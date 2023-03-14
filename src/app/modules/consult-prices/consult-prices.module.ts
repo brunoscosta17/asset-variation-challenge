@@ -9,10 +9,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { VariationResultGraphComponent } from 'src/app/components/variation-result-graph/variation-result-graph.component';
 
 @NgModule({
   declarations: [
-    ConsultPricesComponent
+    ConsultPricesComponent,
+    VariationResultGraphComponent
   ],
   imports: [
     CommonModule,
