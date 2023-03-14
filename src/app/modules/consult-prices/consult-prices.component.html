@@ -1,6 +1,6 @@
 <div class="search-wrapper">
   <mat-form-field appearance="outline">
-    <mat-label>Pesquisa de preços</mat-label>
+    <mat-label>Nome do ativo</mat-label>
     <input matInput [formControl]="queryField" />
   </mat-form-field>
   <div class="button-row">
@@ -10,7 +10,7 @@
       class="button"
       [disabled]="!queryField.value"
       (click)="search()">
-      Pesquisar preço
+      Pesquisar
     </button>
   </div>
 </div>
