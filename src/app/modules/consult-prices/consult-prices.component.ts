@@ -1,3 +1,4 @@
+import { PRICES } from './prices.mock';
 import { ConsultPricesService } from './../../services/consult-prices.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
@@ -33,7 +34,10 @@ export class ConsultPricesComponent implements AfterViewInit {
   queryField = new FormControl();
 
   displayedColumns: string[] = [ 'day', 'date', 'value', 'dailyPriceChange', 'priceChangeSinceBeginning' ];
+
   dataSource = new _MatTableDataSource<any>(ELEMENT_DATA);
+
+  dataMock = PRICES;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -55,6 +59,7 @@ export class ConsultPricesComponent implements AfterViewInit {
       .subscribe({
         next: (data: any) => {
           console.log(data);
+          this.dataSource = new _MatTableDataSource<any>(data);
         },
         error: (e: Error) => {
           console.log(`$error - ${e.message}`);

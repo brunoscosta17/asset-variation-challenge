@@ -15,6 +15,9 @@
   </div>
 </div>
 <div class="table">
+
+  <h1 *ngIf="dataSource.data.length > 0">Resultado da Variação de preços da companhia {{ dataMock.chart.result[0].meta.symbol }} nos últimos 30 dias </h1>
+
   <div class="mat-elevation-z8">
 
     <table mat-table [dataSource]="dataSource">
@@ -57,5 +60,5 @@
   </div>
 </div>
 <div class="graph">
-  <app-variation-result-graph [data]="dataSource.data"></app-variation-result-graph>
+  <app-variation-result-graph [data]="dataMock"></app-variation-result-graph>
 </div>
