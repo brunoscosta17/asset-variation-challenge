@@ -7,7 +7,8 @@ import { ConsultPricesRoutingModule } from './consult-prices-routing.module';
 import { ConsultPricesComponent } from './consult-prices.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { MatButtonModule } from '@angular/material/button';
     ConsultPricesRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class ConsultPricesModule { }
