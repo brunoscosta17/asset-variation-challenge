@@ -31,7 +31,6 @@ export class ConsultPricesComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
     const prices = this.dataMock.chart.result[0].indicators.quote[0].close.slice(-30);
     const arrayDates = this.dataMock.chart.result[0].timestamp.slice(-30);
 
