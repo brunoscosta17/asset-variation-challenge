@@ -17,23 +17,21 @@ export class VariationResultGraphComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data);
-    const indc = this.data.chart.result[0].indicators.quote[0].open;
-    const indc2 = indc.slice(-30);
-    console.log('INDIC2', indc2)
-    const data = this.data.chart.result[0];
-    const prices = data.indicators.quote[0].close;
-    const timestamps = data.timestamp;
-    console.log(data, prices, timestamps);
+    const values = this.data.chart.result[0].indicators.quote[0].open.slice(-30);
     new Chart(this.element.nativeElement, {
       type: 'line',
       data: {
         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
         datasets: [
           {
-            data: indc2
+            data: values
           }
         ]
+      },
+      options: {
+        plugins: {
+          legend: { display: false }
+        }
       }
     });
   }
