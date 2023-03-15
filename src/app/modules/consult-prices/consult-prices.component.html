@@ -59,6 +59,6 @@
 
   </div>
 </div>
-<div class="graph">
+<div class="graph" *ngIf="dataSource.data.length > 0">
   <app-variation-result-graph [data]="dataMock"></app-variation-result-graph>
 </div>
