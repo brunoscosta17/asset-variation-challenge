@@ -31,8 +31,17 @@ export class ConsultPricesComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    const prices = this.dataMock.chart.result[0].indicators.quote[0].close.slice(-30);
-    const arrayDates = this.dataMock.chart.result[0].timestamp.slice(-30);
+    this.handleData(this.dataMock);
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  handleData(data: any): void {
+
+    const prices = data.chart.result[0].indicators.quote[0].close.slice(-30);
+    const arrayDates = data.chart.result[0].timestamp.slice(-30);
 
     const priceChanges = prices.map((price: number, index: number) => {
 
@@ -47,10 +56,6 @@ export class ConsultPricesComponent implements OnInit, AfterViewInit {
     this.dataSource = new _MatTableDataSource<DataPrices>(this.ELEMENT_DATA);
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
-
   search(): void {
     this.consultPricesService
       .getPrices(this.queryField.value)
@@ -59,7 +64,7 @@ export class ConsultPricesComponent implements OnInit, AfterViewInit {
         map(prices => prices.slice(-30)))
       .subscribe({
         next: (data: any) => {
-          this.dataSource = new _MatTableDataSource<any>(data);
+          this.handleData(data);
         },
         error: (e: Error) => {
           console.log(`$error - ${e.message}`);
