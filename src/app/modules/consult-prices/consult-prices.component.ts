@@ -53,7 +53,6 @@ export class ConsultPricesComponent implements OnInit, AfterViewInit {
   }
 
   search(): void {
-    console.log(this.queryField.value);
     this.consultPricesService
       .getPrices(this.queryField.value)
       .pipe(
@@ -61,7 +60,6 @@ export class ConsultPricesComponent implements OnInit, AfterViewInit {
         map(prices => prices.slice(-30)))
       .subscribe({
         next: (data: any) => {
-          console.log(data);
           this.dataSource = new _MatTableDataSource<any>(data);
         },
         error: (e: Error) => {
